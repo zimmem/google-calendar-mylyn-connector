@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.mylyn.tasks.ui.repositories">
+      <connectorCore
+            class="com.zimmem.mylyn.connector.google.calendar.core.GoogleCalendarRepositoryConnector"
+            id="googlecalendar"
+            name="Google Calendar">
+      </connectorCore>
+      <connectorUi
+            brandingIcon="icons/GoogleCalendar-icon.png"
+            class="com.zimmem.mylyn.connector.google.calendar.ui.GoogleCalendarConnectorUi"
+            overlayIcon="icons/GoogleCalendar-icon-overlay.png">
+      </connectorUi>
+   </extension>
+   <extension
+         point="org.eclipse.mylyn.tasks.ui.editors">
+      <pageFactory
+            class="com.zimmem.mylyn.connector.google.calendar.ui.editor.GoogleCalendarPageFactory"
+            id="com.zimmem.mylyn.google.calendar.ui.pageFactory">
+      </pageFactory>
+   </extension>
+
+</plugin>
