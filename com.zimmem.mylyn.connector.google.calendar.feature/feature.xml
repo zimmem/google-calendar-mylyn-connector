@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="com.zimmem.mylyn.connector.google.calendar.feature"
-      label="Feature"
+      label="google-calendar-mylyn-connector"
       version="1.0.0"
       provider-name="ZIMMEM">
 
