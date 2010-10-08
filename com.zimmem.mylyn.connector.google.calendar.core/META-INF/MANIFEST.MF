@@ -6,11 +6,10 @@ Bundle-Version: 0.0.1.qualifier
 Bundle-Activator: com.zimmem.mylyn.connector.google.calendar.core.GoogleCalendarCorePlugin
 Bundle-Vendor: ZIMMEM
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.mylyn.tasks.core;bundle-version="3.5.0",
- org.eclipse.mylyn.commons.net;bundle-version="3.5.0",
- org.eclipse.mylyn.commons.core;bundle-version="3.5.0",
- org.eclipse.core.net;bundle-version="1.2.100",
- org.eclipse.mylyn.commons.xmlrpc;bundle-version="3.5.0",
+ org.eclipse.mylyn.tasks.core;bundle-version="3.4.0",
+ org.eclipse.mylyn.commons.net;bundle-version="3.4.0",
+ org.eclipse.mylyn.commons.core;bundle-version="3.4.0",
+ org.eclipse.mylyn.commons.xmlrpc;bundle-version="3.4.0",
  org.apache.xmlrpc;bundle-version="3.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
@@ -20,5 +19,3 @@ Bundle-ClassPath: .,
  lib/gdata-core-1.0.jar,
  lib/gdata-calendar-2.0.jar,
  lib/gdata-client-1.0.jar
-Import-Package: javax.annotation,
- javax.annotation.concurrent

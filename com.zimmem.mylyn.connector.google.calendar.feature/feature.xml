@@ -2,7 +2,7 @@
 <feature
       id="com.zimmem.mylyn.connector.google.calendar.feature"
       label="google-calendar-mylyn-connector"
-      version="1.0.0"
+      version="0.0.1"
       provider-name="ZIMMEM">
 
    <description url="http://www.example.com/description">
@@ -18,7 +18,7 @@
    </license>
 
    <requires>
-      <import feature="com.zimmem.mylyn.connector.google.calendar" version="0.0.1" patch="true"/>
+      <import feature="org.eclipse.mylyn_feature" version="3.4" match="compatible"/>
    </requires>
 
    <plugin

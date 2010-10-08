@@ -119,7 +119,7 @@ public class GoogleCalendarTaskDataHandler extends AbstractTaskDataHandler {
         CalendarEventEntry created = connector.getGoogleCalendarClient(repository)
                 .createTask(entry);
 
-        return new RepositoryResponse(ResponseKind.TASK_CREATED, created.getEditLink().getHref());
+        return new RepositoryResponse(ResponseKind.TASK_CREATED, getID(created));
 
     }
 
@@ -152,7 +152,7 @@ public class GoogleCalendarTaskDataHandler extends AbstractTaskDataHandler {
 
         CalendarEventEntry updated = client.updateEvent(entry);
 
-        return new RepositoryResponse(ResponseKind.TASK_UPDATED, updated.getEditLink().getHref());
+        return new RepositoryResponse(ResponseKind.TASK_UPDATED, getID(updated));
     }
 
     private static String getStringValue(TaskData data, GoogleCalendarAttribute attribute) {
@@ -212,10 +212,6 @@ public class GoogleCalendarTaskDataHandler extends AbstractTaskDataHandler {
         }
     }
 
-    private String getEventEditHref(CalendarEventEntry event) {
-        return event.getEditLink().getHref();
-    }
-
     /**
      * update calendar event to local task
      * 
@@ -228,7 +224,7 @@ public class GoogleCalendarTaskDataHandler extends AbstractTaskDataHandler {
     public TaskData updateEventTask(TaskRepository taskRepository, CalendarEventEntry event,
                                     IProgressMonitor monitor) throws CoreException {
         String repositoryUrl = taskRepository.getRepositoryUrl();
-        String eventId = getEventEditHref(event);
+        String eventId = getID(event);
         TaskData data = new TaskData(getAttributeMapper(taskRepository),
                 taskRepository.getConnectorKind(), repositoryUrl, eventId);
         this.initializeTaskData(taskRepository, data, null, monitor);
@@ -252,5 +248,11 @@ public class GoogleCalendarTaskDataHandler extends AbstractTaskDataHandler {
         eventTime.setEndTime(new DateTime(end, TimeZone.getDefault()));
         event.getTimes().clear();
         event.addTime(eventTime);
+    }
+
+    private String getID(CalendarEventEntry entry) {
+        String icalUID = entry.getIcalUID();
+        int index = icalUID.indexOf('@');
+        return icalUID.substring(0, index);
     }
 }

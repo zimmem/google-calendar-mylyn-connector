@@ -38,6 +38,8 @@ public class GoogleCalendarClient {
 
     public final static String   CONNECTOR_APPLICATION_NAME = "google-calendar-mylyn-connector";
 
+    public final static String   EVENT_EDIT_URL_BEGIN       = "https://www.google.com/calendar/feeds/default/private/full/";
+
     public final static URL      GOOGLE_CALENDAR_FEEDS      = createURL("https://www.google.com/calendar/feeds/");
 
     public final static URL      OWNER_CALENDARS_FEED       = createURL("https://www.google.com/calendar/feeds/default/owncalendars/full");
@@ -100,7 +102,7 @@ public class GoogleCalendarClient {
 
     public CalendarEventEntry getCalendarEvent(String id) throws CoreException {
         try {
-            return calendarService.getEntry(new URL(id), CalendarEventEntry.class);
+            return calendarService.getEntry(createEventEditUrl(id), CalendarEventEntry.class);
         } catch (IOException e) {
             throw wrapCoreException(IStatus.ERROR,
                     "error occured while fetch google calendar event", e);
@@ -166,4 +168,9 @@ public class GoogleCalendarClient {
         Status status = new Status(statusLevel, GoogleCalendarCorePlugin.PLUGIN_ID, message, e);
         return new CoreException(status);
     }
+
+    private URL createEventEditUrl(String id) {
+        return createURL(EVENT_EDIT_URL_BEGIN + id);
+    }
+
 }
