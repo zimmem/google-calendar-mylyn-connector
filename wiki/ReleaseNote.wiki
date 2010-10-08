@@ -1,9 +1,5 @@
 #release note for google-calendar-mylyn-connector
 
-= Introduction =
-
-Add your content here.
-
 
 =Release notes =
 
