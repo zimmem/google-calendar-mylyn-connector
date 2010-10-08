@@ -38,7 +38,7 @@ public class GoogleCalendarRepositorySettingsPage extends AbstractRepositorySett
 
     private static final String TITLE       = "Google Calendar Repository Settings";
 
-    private static final String DESCRIPTION = "Enter a Google Code project location (e.g. http://code.google.com/p/googlecode-mylyn-connector/)";
+    private static final String DESCRIPTION = "Enter your google account and password.";
 
     public GoogleCalendarRepositorySettingsPage(TaskRepository taskRepository) {
         super(TITLE, DESCRIPTION, taskRepository);
