@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.zimmem.mylyn.connector.google.calendar.feature_0.0.1.jar" id="com.zimmem.mylyn.connector.google.calendar.feature" version="0.0.1">
+      <category name="com.zimmem.mylyn.google.calendar"/>
+   </feature>
+   <category-def name="com.zimmem.mylyn.google.calendar" label="google-calendar-mylyn-connector"/>
+</site>
