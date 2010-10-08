@@ -1,4 +1,4 @@
-# release note for google-calendar-mylyn-connector
+#summary release note for google-calendar-mylyn-connector
 
 
 =Release notes =
